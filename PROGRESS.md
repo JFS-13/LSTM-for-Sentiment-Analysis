@@ -1,7 +1,7 @@
 # Stato del Progetto: Sentiment Analysis Twitter (Matlab)
 
 ## Architettura e Workflow Consolidato
-1.  **Preprocessing:** `load_twitterdata_optimized.m` -> Genera `ready_data.mat` (Vocab: 5000 parole, Coverage: 86.79%).
+1.  **Preprocessing:** `load_twitterdata.m` -> Genera `ready_data.mat` (Vocab: 5000 parole, Coverage: 86.79%).
 2.  **Inizializzazione:** `init_lstm.m` -> Crea `init_lstm.mat`. **Tutti i modelli partono ora dallo stesso set di pesi Xavier** per garantire confronti scientificamente validi.
 3.  **Ottimizzazione (Standardizzata):**
     *   **SGD Nesterov**: `lstm_train_SGD_momentum.m` (Robbins-Monro $\alpha_k$, Momentum 0.95).
