@@ -1,4 +1,4 @@
-% Load Twitter Data Optimized
+% Load Twitter Data
 
 % This script handles the entire data preprocessing pipeline for the 
 % Twitter sentiment analysis project. It performs text cleaning 
