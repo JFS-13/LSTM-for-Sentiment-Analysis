@@ -58,7 +58,7 @@ function best_val_acc = train_fold_generic(X_T, Y_T, X_V, Y_V, lambda_val, lr_va
             % optimized backward pass
             grads = backward_lstm_optimized(x_batch, y_batch, net, cache);
             
-            % 1. Global Gradient Clipping (Slide 82)
+            % 1. Global Gradient Clipping
             gnorm_sq = 0;
             for k = 1:numel(params)
                 gp = grads.(['d' params{k}]);
@@ -67,14 +67,14 @@ function best_val_acc = train_fold_generic(X_T, Y_T, X_V, Y_V, lambda_val, lr_va
             gnorm = sqrt(gnorm_sq);
             scale = min(1.0, CLIP_NORM / (gnorm + 1e-6));
             
-            % 2. Update Logic (Slide 80-84)
+            % 2. Update Logic
             for k = 1:numel(params)
                 p = params{k};
                 g = grads.(['d' p]) * scale;
                 
                 switch lower(optimizer_type)
                     case 'nesterov'
-                        % Robbins-Monro schedule (Slide 80)
+                        % Robbins-Monro schedule
                         lr = lr_val / (1 + 1e-4 * global_iter);
                         MOMENTUM = 0.95;
                         state1.(p) = MOMENTUM * state1.(p) + g;
@@ -87,7 +87,7 @@ function best_val_acc = train_fold_generic(X_T, Y_T, X_V, Y_V, lambda_val, lr_va
                         end
 
                     case 'adagrad'
-                        % cumulative diagonal scaling (Slide 84)
+                        % cumulative diagonal scaling
                         state1.(p) = state1.(p) + g.^2;
                         adaptive_lr = lr_val ./ (sqrt(state1.(p)) + EPSILON);
                         
@@ -97,7 +97,7 @@ function best_val_acc = train_fold_generic(X_T, Y_T, X_V, Y_V, lambda_val, lr_va
                         net.(p) = net.(p) - adaptive_lr .* g;
 
                     case 'rmsprop'
-                        % moving average scaling (Slide 84)
+                        % moving average scaling
                         GAMMA = 0.9;
                         state1.(p) = GAMMA * state1.(p) + (1 - GAMMA) * g.^2;
                         adaptive_lr = lr_val ./ (sqrt(state1.(p)) + EPSILON);
@@ -108,7 +108,7 @@ function best_val_acc = train_fold_generic(X_T, Y_T, X_V, Y_V, lambda_val, lr_va
                         net.(p) = net.(p) - adaptive_lr .* g;
 
                     case 'adamw'
-                        % Adam with bias correction and decoupled weight decay (Slide 84)
+                        % Adam with bias correction and decoupled weight decay
                         lr = lr_val / (1 + 1e-4 * global_iter);
                         beta1 = 0.9; beta2 = 0.999;
                         
