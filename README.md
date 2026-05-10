@@ -20,7 +20,7 @@ Il workflow è suddiviso in fasi logiche:
 ## Struttura della Repository
 *   `load_twitterdata.m`: Script per caricare e processare il dataset.
 *   `init_lstm.m`: Inizializzazione dei parametri della rete.
-*   `forward_lstm.m` / `backward_lstm_optimized.m`: Logica core della rete LSTM.
+*   `forward_lstm.m` / `backward_lstm.m`: Logica core della rete LSTM.
 *   `train_lstm_*.m`: Script specifici per ogni metodo di ottimizzazione.
 *   `kfold_gridsearch.m`: Script per la selezione dei migliori iperparametri per ogni algoritmo di ottimizzazione.
 *   `confronto_finale.m`: Visualizzazione e confronto tra i risultati ottenuti con i diversi ottimizzatori.
