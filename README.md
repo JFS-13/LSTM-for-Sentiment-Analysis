@@ -18,7 +18,7 @@ Il workflow è suddiviso in fasi logiche:
     *   **AdamW**: Con correzione del bias e Weight Decay.
 
 ## Struttura della Repository
-*   `load_twitterdata_optimized.m`: Script per caricare e processare il dataset.
+*   `load_twitterdata.m`: Script per caricare e processare il dataset.
 *   `init_lstm.m`: Inizializzazione dei parametri della rete.
 *   `forward_lstm.m` / `backward_lstm_optimized.m`: Logica core della rete LSTM.
 *   `train_lstm_*.m`: Script specifici per ogni metodo di ottimizzazione.
@@ -33,7 +33,7 @@ Il workflow è suddiviso in fasi logiche:
 ## Guida all'Uso
 
 ### 1. Preparazione Dati
-Eseguire `load_twitterdata_optimized.m` per generare il file `ready_data.mat`. Assicurarsi che la cartella `TwitterParsed` o il relativo `.zip` siano presenti.
+Eseguire `load_twitterdata.m` per generare il file `ready_data.mat`. Assicurarsi che la cartella `TwitterParsed` o il relativo `.zip` siano presenti.
 
 ### 2. Inizializzazione
 Eseguire `init_lstm.m` per generare i pesi iniziali `init_lstm.mat`.
