@@ -34,7 +34,7 @@ Valutazione effettuata tramite `confronto_finale.m` e script di test individuali
 1.  **Verifica Toolbox:** Assicurarsi che il *Parallel Computing Toolbox* sia installato (`ver` in Command Window).
 2.  **Lancio Grid Search:** Eseguire `kfold_gridsearch.m`. Lo script avvierà automaticamente il `parpool`.
 3.  **Analisi Risultati:** Al termine, analizzare la superficie 3D generata e i valori ottimali stampati in console.
-4.  **Training Finale:** Aggiornare gli iperparametri negli script di training specifici (es. `train_lstm_adamW_optimized.m`) con i valori "vincitori" trovati e lanciare il training completo (10 epoche).
+4.  **Training Finale:** Aggiornare gli iperparametri negli script di training specifici (es. `train_lstm_adamW.m`) con i valori "vincitori" trovati e lanciare il training completo (10 epoche).
 
 ---
 *Ultimo aggiornamento: 7 Maggio 2026 (Sistema pronto per Grid Search Parallela)*
