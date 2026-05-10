@@ -75,7 +75,7 @@ for epoch = 1:EPOCHS
         total_loss = total_loss + batch_loss * size(x_batch, 1);
         
         % optimized backward pass
-        grads = backward_lstm_optimized(x_batch, y_batch, lstm_net, cache);
+        grads = backward_lstm(x_batch, y_batch, lstm_net, cache);
         
         % --- RMSPROP UPDATE STEP ---
         params = fieldnames(lstm_net);
