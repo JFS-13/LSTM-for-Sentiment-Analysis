@@ -7,7 +7,7 @@
 clear; clc;
 
 % --- 1. DATA LOADING ---
-disp('Caricamento dati Test e Rete LSTM SGD Nesterov Ottimizzata...');
+disp('Caricamento dati Test e Rete LSTM SGD Ottimizzata...');
 if isfile('ready_data.mat') && isfile('best_lstm_SGD_momentum.mat')
     load('ready_data.mat', 'X_Test', 'Y_Test');
     load('best_lstm_SGD_momentum.mat'); 
