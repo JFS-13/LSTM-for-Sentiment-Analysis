@@ -1,4 +1,4 @@
-% Train LSTM AdamW Optimized
+% Train LSTM AdamW
 
 % This script implements an optimized training loop for the LSTM network 
 % using the AdamW optimization method. It includes bias correction for 
