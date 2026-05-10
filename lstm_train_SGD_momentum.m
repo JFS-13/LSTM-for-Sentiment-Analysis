@@ -12,7 +12,7 @@ disp('Caricamento dati e inizializzazione SGD Nesterov...');
 if isfile('ready_data.mat')
     load('ready_data.mat'); 
 else
-    error('File ready_data.mat non trovato! Esegui load_twitterdata_optimized.m');
+    error('File ready_data.mat non trovato! Esegui load_twitterdata.m');
 end
 
 % hyper-parameters for optimization
