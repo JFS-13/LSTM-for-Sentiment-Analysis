@@ -56,7 +56,7 @@ function best_val_acc = train_fold_generic(X_T, Y_T, X_V, Y_V, lambda_val, lr_va
             [~, cache] = forward_lstm(x_batch, net, DROPOUT_RATE);
             
             % optimized backward pass
-            grads = backward_lstm_optimized(x_batch, y_batch, net, cache);
+            grads = backward_lstm(x_batch, y_batch, net, cache);
             
             % 1. Global Gradient Clipping
             gnorm_sq = 0;
