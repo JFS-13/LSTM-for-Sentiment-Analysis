@@ -8,7 +8,7 @@
 clear; clc; close all;
 
 % --- 1. GRID SEARCH CONFIGURATION ---
-% select the optimizer to test: 'nesterov', 'adagrad', 'rmsprop', 'adamw'
+% select the optimizer to test: 'sgd', 'adagrad', 'rmsprop', 'adamw'
 OPTIMIZER = 'adamw'; 
 
 % hyper-parameter grid
