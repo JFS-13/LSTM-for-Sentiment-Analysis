@@ -4,7 +4,7 @@
 1.  **Preprocessing:** `load_twitterdata.m` -> Genera `ready_data.mat` (Vocab: 5000 parole, Coverage: 86.79%).
 2.  **Inizializzazione:** `init_lstm.m` -> Crea `init_lstm.mat`. **Tutti i modelli partono ora dallo stesso set di pesi Xavier** per garantire confronti scientificamente validi.
 3.  **Ottimizzazione (Standardizzata):**
-    *   **SGD Nesterov**: `lstm_train_SGD_momentum.m` (Robbins-Monro $\alpha_k$, Momentum 0.95).
+    *   **SGD Nesterov**: `train_lstm_sgd_momentum.m` (Robbins-Monro $\alpha_k$, Momentum 0.95).
     *   **Adagrad**: `train_lstm_adagrad.m` (Scaling diagonale adattivo).
     *   **RMSprop**: `train_lstm_rmsprop.m` (Media mobile dei quadrati).
     *   **AdamW**: `train_lstm_adamW_optimized.m` (Bias correction e Decoupled Weight Decay).
