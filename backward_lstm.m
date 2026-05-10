@@ -1,6 +1,6 @@
-% Backward LSTM Optimized
+% Backward LSTM
 
-function grads = backward_lstm_optimized(x_batch, target, net, cache)
+function grads = backward_lstm(x_batch, target, net, cache)
     % Input arguments.
     %   x_batch: matrix of word indices for the current batch (N x T)
     %   target: vector of ground truth labels (N x 1)
