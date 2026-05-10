@@ -82,7 +82,7 @@ for epoch = 1:EPOCHS
         total_loss = total_loss + batch_loss * this_batch_size;
         
         % C. BACKWARD PASS
-        grads = backward_lstm_optimized(x_batch, y_batch, lstm_net, cache);
+        grads = backward_lstm(x_batch, y_batch, lstm_net, cache);
         
         % --- ADAMW UPDATE STEP ---
         params = fieldnames(lstm_net);
