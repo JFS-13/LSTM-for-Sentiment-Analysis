@@ -12,7 +12,7 @@ if isfile('ready_data.mat') && isfile('best_lstm_rmsprop.mat')
     load('ready_data.mat', 'X_Test', 'Y_Test');
     load('best_lstm_rmsprop.mat'); 
 else
-    error('File mancanti! Esegui prima load_twitterdata_optimized e train_lstm_rmsprop.');
+    error('File mancanti! Esegui prima load_twitterdata e train_lstm_rmsprop.');
 end
 
 num_test = size(X_Test, 1);
