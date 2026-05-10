@@ -9,7 +9,7 @@
 if isfile('ready_data.mat')
     load('ready_data.mat', 'VOCAB_SIZE', 'SEQ_LENGTH');
 else
-    error('ready_data.mat non trovato. Esegui prima load_twitterdata_optimized.m');
+    error('ready_data.mat non trovato. Esegui prima load_twitterdata.m');
 end
 
 % hyper-parameters configuration
