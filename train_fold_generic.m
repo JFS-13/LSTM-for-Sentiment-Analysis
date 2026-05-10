@@ -9,7 +9,7 @@ function best_val_acc = train_fold_generic(X_T, Y_T, X_V, Y_V, lambda_val, lr_va
     %   lambda_val: Regularization parameter (weight decay)
     %   lr_val: Initial Learning Rate for the optimizer
     %   init_net_file: Path to the .mat file containing the initial Xavier weights
-    %   optimizer_type: String specifying the optimizer ('nesterov', 'adagrad', 'rmsprop', 'adamw')
+    %   optimizer_type: String specifying the optimizer ('sgd', 'adagrad', 'rmsprop', 'adamw')
     %
     % Output arguments.
     %   best_val_acc: Best validation accuracy achieved during the training of the fold
@@ -27,7 +27,7 @@ function best_val_acc = train_fold_generic(X_T, Y_T, X_V, Y_V, lambda_val, lr_va
 
     % initialize optimizer-specific states
     params = fieldnames(net);
-    state1 = struct(); % v for nesterov/adamw, G for adagrad/rmsprop
+    state1 = struct(); % v for sgd/adamw, G for adagrad/rmsprop
     state2 = struct(); % v_t for adamw
     for k = 1:numel(params)
         state1.(params{k}) = zeros(size(net.(params{k})));
@@ -73,7 +73,7 @@ function best_val_acc = train_fold_generic(X_T, Y_T, X_V, Y_V, lambda_val, lr_va
                 g = grads.(['d' p]) * scale;
                 
                 switch lower(optimizer_type)
-                    case 'nesterov'
+                    case 'sgd'
                         % Robbins-Monro schedule
                         lr = lr_val / (1 + 1e-4 * global_iter);
                         MOMENTUM = 0.95;
