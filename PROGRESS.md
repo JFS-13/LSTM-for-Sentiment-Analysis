@@ -8,7 +8,7 @@
     *   **Adagrad**: `train_lstm_adagrad.m` (Scaling diagonale adattivo).
     *   **RMSprop**: `train_lstm_rmsprop.m` (Media mobile dei quadrati).
     *   **AdamW**: `train_lstm_adamW_optimized.m` (Bias correction e Decoupled Weight Decay).
-4.  **Validazione:** `kfold_gridsearch_generic.m` e `train_fold_generic.m` per la ricerca sistematica di $\lambda$.
+4.  **Validazione:** `kfold_gridsearch.m` e `train_fold_generic.m` per la ricerca sistematica di $\lambda$.
 
 ## Risultati Finali (Benchmarking)
 Valutazione effettuata tramite `confronto_finale.m` e script di test individuali (`test_lstm_best_*.m`):
@@ -26,13 +26,13 @@ Valutazione effettuata tramite `confronto_finale.m` e script di test individuali
 
 ## Finalizzazione Style e Ottimizzazione Grid Search
 *   **Refactoring Accademico:** Tutti i file `.m` sono stati aggiornati con header ufficiali e documentazione dei parametri conforme allo stile richiesto.
-*   **Grid Search Potenziata (LR + Lambda):** Lo script `kfold_gridsearch_generic.m` ora ottimizza simultaneamente sia il **Learning Rate** che il **Weight Decay**.
+*   **Grid Search Potenziata (LR + Lambda):** Lo script `kfold_gridsearch.m` ora ottimizza simultaneamente sia il **Learning Rate** che il **Weight Decay**.
 *   **Parallelizzazione (`parfor`):** Implementata la ricerca parallela per sfruttare i core della CPU e abbattere i tempi di calcolo.
 *   **Strategie di Efficienza:** Per la fase di ricerca iperparametri, sono stati impostati `K_FOLDS = 3` e `EPOCHS = 3` in `train_fold_generic.m`.
 
 ### Prossimi Passi (Handoff per ripresa sessione)
 1.  **Verifica Toolbox:** Assicurarsi che il *Parallel Computing Toolbox* sia installato (`ver` in Command Window).
-2.  **Lancio Grid Search:** Eseguire `kfold_gridsearch_generic.m`. Lo script avvierà automaticamente il `parpool`.
+2.  **Lancio Grid Search:** Eseguire `kfold_gridsearch.m`. Lo script avvierà automaticamente il `parpool`.
 3.  **Analisi Risultati:** Al termine, analizzare la superficie 3D generata e i valori ottimali stampati in console.
 4.  **Training Finale:** Aggiornare gli iperparametri negli script di training specifici (es. `train_lstm_adamW_optimized.m`) con i valori "vincitori" trovati e lanciare il training completo (10 epoche).
 
