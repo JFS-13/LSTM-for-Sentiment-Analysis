@@ -41,5 +41,5 @@ if isfile('ready_data.mat')
     fprintf('find(strcmp(sortedWords, ''tuaparola''))\n');
     
 else
-    error('ready_data.mat non trovato. Esegui prima load_twitterdata_optimized.m');
+    error('ready_data.mat non trovato. Esegui prima load_twitterdata.m');
 end
