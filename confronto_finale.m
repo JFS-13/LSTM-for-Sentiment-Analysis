@@ -1,15 +1,15 @@
 % Final Comparison
 
 % This script performs a comparative evaluation of different optimization 
-% methods (SGD Nesterov, Adagrad, RMSprop, AdamW) applied to the LSTM model.
+% methods (SGD, Adagrad, RMSprop, AdamW) applied to the LSTM model.
 % It calculates Accuracy and F1-Score on the test set and generates 
 % comparative plots for Training Loss and Validation Accuracy.
 
 clear; clc; close all;
 
 % configuration
-metodi = {'SGD_momentum', 'adagrad', 'rmsprop', 'adamW_optimized'};
-nomi_label = {'SGD Nesterov', 'Adagrad', 'RMSprop', 'Adam'};
+metodi = {'SGD', 'adagrad', 'rmsprop', 'adamW'};
+nomi_label = {'SGD', 'Adagrad', 'RMSprop', 'Adam'};
 colori = {'r', 'g', 'b', 'm'};
 stili = {'-o', '-s', '-^', '-d'}; 
 
