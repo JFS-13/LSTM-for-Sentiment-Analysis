@@ -12,7 +12,7 @@ if isfile('ready_data.mat') && isfile('best_lstm_SGD_momentum.mat')
     load('ready_data.mat', 'X_Test', 'Y_Test');
     load('best_lstm_SGD_momentum.mat'); 
 else
-    error('File mancanti! Esegui prima load_twitterdata_optimized e lstm_train_SGD_momentum.');
+    error('File mancanti! Esegui prima load_twitterdata e lstm_train_SGD_momentum.');
 end
 
 num_test = size(X_Test, 1);
