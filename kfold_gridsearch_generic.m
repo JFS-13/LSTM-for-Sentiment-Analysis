@@ -20,7 +20,7 @@ init_net_file = 'init_lstm.mat';
 
 % data loading
 if ~isfile('ready_data.mat')
-    error('File ready_data.mat non trovato! Esegui load_twitterdata_optimized.m');
+    error('File ready_data.mat non trovato! Esegui load_twitterdata.m');
 end
 load('ready_data.mat'); 
 
