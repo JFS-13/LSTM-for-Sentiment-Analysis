@@ -12,7 +12,7 @@ if isfile('ready_data.mat') && isfile('best_lstm_adamW_optimized.mat')
     load('ready_data.mat', 'X_Test', 'Y_Test');
     load('best_lstm_adamW_optimized.mat'); 
 else
-    error('File mancanti! Esegui prima load_twitterdata e train_lstm_adamW_optimized.');
+    error('File mancanti! Esegui prima load_twitterdata e train_lstm_adamW.');
 end
 
 num_test = size(X_Test, 1);
