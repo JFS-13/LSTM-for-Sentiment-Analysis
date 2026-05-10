@@ -1,4 +1,4 @@
-% K-fold Grid Search Generic (Parallel Version)
+% K-fold Grid Search
 
 % This script implements a systematic Grid Search with K-Fold Cross-Validation 
 % to optimize both the Learning Rate (LR) and the Regularization parameter (lambda).
