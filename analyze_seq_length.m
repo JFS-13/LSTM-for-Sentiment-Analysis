@@ -29,7 +29,7 @@ for c = 1:length(categories)
         % read content
         txt = fileread(filePath);
         
-        % text cleaning (consistent with load_twitterdata_optimized)
+        % text cleaning (consistent with load_twitterdata)
         txt = lower(txt);
         txt = regexprep(txt, 'http\S+', ''); 
         txt = regexprep(txt, '@\S+', ''); 
