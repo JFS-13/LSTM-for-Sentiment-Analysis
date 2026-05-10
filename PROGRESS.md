@@ -7,7 +7,7 @@
     *   **SGD Nesterov**: `train_lstm_sgd_momentum.m` (Robbins-Monro $\alpha_k$, Momentum 0.95).
     *   **Adagrad**: `train_lstm_adagrad.m` (Scaling diagonale adattivo).
     *   **RMSprop**: `train_lstm_rmsprop.m` (Media mobile dei quadrati).
-    *   **AdamW**: `train_lstm_adamW_optimized.m` (Bias correction e Decoupled Weight Decay).
+    *   **AdamW**: `train_lstm_adamW.m` (Bias correction e Decoupled Weight Decay).
 4.  **Validazione:** `kfold_gridsearch.m` e `train_fold_generic.m` per la ricerca sistematica di $\lambda$.
 
 ## Risultati Finali (Benchmarking)
