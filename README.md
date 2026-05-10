@@ -22,7 +22,7 @@ Il workflow è suddiviso in fasi logiche:
 *   `init_lstm.m`: Inizializzazione dei parametri della rete.
 *   `forward_lstm.m` / `backward_lstm_optimized.m`: Logica core della rete LSTM.
 *   `train_lstm_*.m`: Script specifici per ogni metodo di ottimizzazione.
-*   `kfold_gridsearch_generic.m`: Script per la selezione dei migliori iperparametri per ogni algoritmo di ottimizzazione.
+*   `kfold_gridsearch.m`: Script per la selezione dei migliori iperparametri per ogni algoritmo di ottimizzazione.
 *   `confronto_finale.m`: Visualizzazione e confronto tra i risultati ottenuti con i diversi ottimizzatori.
 *   `test_custom_tweets.m`: Script per testare il modello su frasi arbitrarie.
 
@@ -41,7 +41,7 @@ Eseguire `init_lstm.m` per generare i pesi iniziali `init_lstm.mat`.
 ### 3. Ricerca Iperparametri
 Per trovare la combinazione migliore di Learning Rate e Lambda:
 ```matlab
-kfold_gridsearch_generic
+kfold_gridsearch
 ```
 Lo script utilizzerà i core della CPU per testare diverse combinazioni tramite Cross-Validation a 3 fold.
 
