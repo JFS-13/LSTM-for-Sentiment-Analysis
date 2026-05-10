@@ -11,7 +11,7 @@ disp('Caricamento dati e inizializzazione Adagrad...');
 if isfile('ready_data.mat')
     load('ready_data.mat'); 
 else
-    error('File ready_data.mat non trovato! Esegui load_twitterdata_optimized.m');
+    error('File ready_data.mat non trovato! Esegui load_twitterdata.m');
 end
 
 % hyper-parameters for optimization
