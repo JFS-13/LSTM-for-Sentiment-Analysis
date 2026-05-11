@@ -148,6 +148,6 @@ end
 
 % visualization
 figure;
-subplot(2,1,1); plot(loss_history, 'r-o'); title('Loss');
+subplot(2,1,1); plot(loss_history, 'r-o'); title('Training Loss SGD');
 subplot(2,1,2); plot(val_acc_history, 'b-s'); title('Validation Accuracy');
 grid on;

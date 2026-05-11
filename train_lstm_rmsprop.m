@@ -133,3 +133,9 @@ for epoch = 1:EPOCHS
         save('best_lstm_rmsprop.mat', 'lstm_net', 'loss_history', 'val_acc_history', 'VOCAB_SIZE', 'SEQ_LENGTH');
     end
 end
+
+% visualization
+figure;
+subplot(2,1,1); plot(loss_history, 'b-o'); title('Training Loss RMSprop');
+subplot(2,1,2); plot(val_acc_history, 'g-s'); title('Validation Accuracy');
+grid on;

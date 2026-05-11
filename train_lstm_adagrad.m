@@ -131,3 +131,9 @@ for epoch = 1:EPOCHS
         save('best_lstm_adagrad.mat', 'lstm_net', 'loss_history', 'val_acc_history', 'VOCAB_SIZE', 'SEQ_LENGTH');
     end
 end
+
+% visualization
+figure;
+subplot(2,1,1); plot(loss_history, 'g-o'); title('Training Loss Adagrad');
+subplot(2,1,2); plot(val_acc_history, 'b-s'); title('Validation Accuracy');
+grid on;

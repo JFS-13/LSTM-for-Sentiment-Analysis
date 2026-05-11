@@ -157,6 +157,6 @@ end
 
 % visualization
 figure;
-subplot(2,1,1); plot(loss_history, 'm-o'); title('Training Loss (AdamW Optimized)');
+subplot(2,1,1); plot(loss_history, 'm-o'); title('Training Loss AdamW');
 subplot(2,1,2); plot(val_acc_history, 'g-s'); title('Validation Accuracy');
 grid on;
