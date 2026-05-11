@@ -8,7 +8,7 @@ Il progetto si focalizza sulla classificazione binaria del sentiment (positivo/n
 ## Architettura del Sistema
 Il workflow è suddiviso in fasi logiche:
 
-1.  **Preprocessing**: Pulizia dei tweet, tokenizzazione e creazione di un vocabolario di 5000 parole (copertura ~86.8%).
+1.  **Preprocessing**: Pulizia dei tweet, tokenizzazione e creazione di un vocabolario di 10000 parole.
 2.  **Inizializzazione**: Utilizzo di pesi **Xavier** standardizzati per garantire che tutti i modelli partano dalla stessa base, permettendo un confronto equo.
 3.  **Core LSTM**: Implementazione manuale, senza toolbox di machine learning, dei passaggi di `forward` e `backward` propagation.
 4.  **Algoritmi di ottimizzazione**: Implementazione di quattro varianti principali per testare la robustezza dell'architettura costruita:
