@@ -58,8 +58,7 @@ parfor i = 1:num_comb
     cur_lr = combinations(i, 1);
     cur_lambda = combinations(i, 2);
     
-    % Note: Inside parfor, fprintf might not display in order or immediately
-    % We use a local variable to store fold accuracies
+    % A local variable is used to store fold accuracies
     local_fold_accs = zeros(K_FOLDS, 1);
     
     for k = 1:K_FOLDS
@@ -101,24 +100,7 @@ disp(res_table);
 
 fprintf('\nVINCITORE:\n');
 fprintf('Best Learning Rate: %.1e\n', best_lr);
-fprintf('Best Lambda (WD):   %.1e\n', best_lambda);
+fprintf('Best Lambda (Weight Decay):   %.1e\n', best_lambda);
 fprintf('Validation Acc:     %.2f%%\n', best_acc);
-
-% surface plot of results
-figure('Name', ['Parallel Grid Search ' OPTIMIZER], 'NumberTitle', 'off');
-[X_plot, Y_plot] = meshgrid(unique(results_grid(:,1)), unique(results_grid(:,2)));
-Z_plot = zeros(size(X_plot));
-
-for i = 1:size(results_grid, 1)
-    r = find(unique(results_grid(:,2)) == results_grid(i,2));
-    c = find(unique(results_grid(:,1)) == results_grid(i,1));
-    Z_plot(r, c) = results_grid(i, 3);
-end
-
-surf(X_plot, Y_plot, Z_plot);
-set(gca, 'XScale', 'log', 'YScale', 'log');
-title(['Grid Search: ' OPTIMIZER ' - LR vs \lambda vs Accuracy']);
-xlabel('Learning Rate'); ylabel('\lambda (Weight Decay)'); zlabel('Accuracy (%)');
-colorbar; grid on;
 
 toc(total_timer);

@@ -76,7 +76,7 @@ end
 
 % plot refinement
 subplot(1,2,1);
-title('Confronto Loss (Caso Non Convesso)');
+title('Confronto Loss');
 xlabel('Epoca'); ylabel('Mean Squared Error / Log-Loss');
 legend('Location', 'northeast'); grid on;
 
@@ -86,4 +86,4 @@ xlabel('Epoca'); ylabel('Accuratezza (%)');
 legend('Location', 'southeast'); grid on;
 
 fprintf('----------------------------------------------------------------------\n');
-disp('Confronto completato. I grafici mostrano la stabilità della convergenza.');
+disp('Confronto completato.');
