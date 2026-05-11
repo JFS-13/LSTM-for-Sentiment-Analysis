@@ -128,8 +128,8 @@ for epoch = 1:EPOCHS
         end
         
         if mod(global_iter, 500) == 0
-            fprintf('  Ep %d | Step %d | Loss: %.4f | LR: %.6f\n', ...
-                epoch, global_iter, total_loss/idx_end, lr);
+            fprintf('  Ep %d | Step %d | Loss: %.4f | LR: %.6f | GNorm: %.2f\n', ...
+                epoch, global_iter, total_loss/idx_end, lr, gnorm);
         end
     end
     

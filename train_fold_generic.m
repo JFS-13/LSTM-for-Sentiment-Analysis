@@ -20,7 +20,7 @@ function best_val_acc = train_fold_generic(X_T, Y_T, X_V, Y_V, lambda_val, lr_va
     
     % --- BASE HYPER-PARAMETERS ---
     BATCH_SIZE = 32;
-    EPOCHS = 3;            % Reduced to 3 for faster Grid Search execution
+    EPOCHS = 3;            % 3 for faster Grid Search execution
     CLIP_NORM = 1.0;       
     DROPOUT_RATE = 0.3;    
     EPSILON = 1e-8;
