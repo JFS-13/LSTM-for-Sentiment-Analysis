@@ -50,4 +50,5 @@ Aggiornare i parametri negli script `train_lstm_*.m` con i valori ottimali trova
 
 ### 5. Valutazione e Test
 *   Eseguire `confronto_finale.m` per generare i grafici di Loss e Accuracy.
+*   Utilizzare `test_lstm.m` per valutare le performance (Accuracy, F1-Score, Matrice di Confusione) del modello scelto sul test set.
 *   Utilizzare `test_custom_tweets.m` per una verifica su input manuali.
