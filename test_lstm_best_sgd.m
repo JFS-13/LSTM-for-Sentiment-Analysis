@@ -8,9 +8,9 @@ clear; clc;
 
 % --- 1. DATA LOADING ---
 disp('Caricamento dati Test e Rete LSTM SGD Ottimizzata...');
-if isfile('ready_data.mat') && isfile('best_lstm_SGD_momentum.mat')
+if isfile('ready_data.mat') && isfile('best_lstm_SGD.mat')
     load('ready_data.mat', 'X_Test', 'Y_Test');
-    load('best_lstm_SGD_momentum.mat'); 
+    load('best_lstm_SGD.mat'); 
 else
     error('File mancanti! Esegui prima load_twitterdata e train_lstm_sgd_momentum.');
 end

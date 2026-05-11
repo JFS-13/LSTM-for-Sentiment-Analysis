@@ -14,8 +14,8 @@ MODELLO_DA_USARE = 'rmsprop';
 switch lower(MODELLO_DA_USARE)
     case 'adagrad', file_mat = 'best_lstm_adagrad.mat';
     case 'rmsprop', file_mat = 'best_lstm_rmsprop.mat';
-    case 'adamw',   file_mat = 'best_lstm_adamW_optimized.mat';
-    case 'sgd',     file_mat = 'best_lstm_SGD_momentum.mat';
+    case 'adamw',   file_mat = 'best_lstm_adamW.mat';
+    case 'sgd',     file_mat = 'best_lstm_SGD.mat';
     otherwise,      error('Modello non riconosciuto.');
 end
 

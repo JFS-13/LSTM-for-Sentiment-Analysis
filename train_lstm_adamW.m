@@ -7,7 +7,7 @@
 clear; clc;
 
 % --- 1. DATA LOADING AND INITIALIZATION ---
-disp('Caricamento dati e inizializzazione AdamW OTTIMIZZATO...');
+disp('Caricamento dati e inizializzazione AdamW...');
 if isfile('ready_data.mat')
     load('ready_data.mat'); 
 else
@@ -151,8 +151,7 @@ for epoch = 1:EPOCHS
         epoch, epoch_loss, val_acc, toc(t_start));
         
     if epoch == 1 || val_acc > max(val_acc_history(1:end-1))
-        save('best_lstm_adamW_optimized.mat', 'lstm_net', 'loss_history', 'val_acc_history', 'VOCAB_SIZE', 'SEQ_LENGTH');
-        disp('  -> Nuovo record salvato (AdamW Opt)!');
+        save('best_lstm_adamW.mat', 'lstm_net', 'loss_history', 'val_acc_history', 'VOCAB_SIZE', 'SEQ_LENGTH');
     end
 end
 

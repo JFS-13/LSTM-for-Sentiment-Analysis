@@ -19,10 +19,10 @@ switch lower(MODELLO)
         file_mat = 'best_lstm_rmsprop.mat';
         label = 'RMSPROP';
     case 'adamw'
-        file_mat = 'best_lstm_adamW_optimized.mat';
+        file_mat = 'best_lstm_adamW.mat';
         label = 'ADAMW';
     case 'sgd'
-        file_mat = 'best_lstm_SGD_momentum.mat';
+        file_mat = 'best_lstm_SGD.mat';
         label = 'SGD';
     otherwise
         error('Modello non riconosciuto.');
