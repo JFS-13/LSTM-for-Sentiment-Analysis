@@ -22,7 +22,7 @@ BATCH_SIZE = 32;
 correct = 0;
 TP = 0; TN = 0; FP = 0; FN = 0;
 
-fprintf('Valutazione (Adagrad) su %d tweet di test...\n', num_test);
+fprintf('Valutazione Adagrad su %d tweet di test...\n', num_test);
 t_start = tic;
 
 % --- 2. EVALUATION LOOP ---
@@ -57,7 +57,7 @@ f1 = 2 * (prec * rec) / (prec + rec + 1e-10);
 
 % --- 4. RESULTS OUTPUT ---
 fprintf('\n=====================================\n');
-fprintf('   RISULTATI FINALI TEST (ADAGRAD)\n');
+fprintf('   RISULTATI FINALI TEST ADAGRAD\n');
 fprintf('=====================================\n');
 fprintf('Accuratezza: %.2f%%\n', acc);
 fprintf('Tempo Test:  %.2f sec\n', toc(t_start));
