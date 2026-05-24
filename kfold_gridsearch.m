@@ -9,7 +9,7 @@ clear; clc; close all;
 
 % --- 1. GRID SEARCH CONFIGURATION ---
 % select the optimizer to test: 'sgd', 'adagrad', 'rmsprop', 'adamw'
-OPTIMIZER = 'adamw'; 
+OPTIMIZER = 'sgd'; 
 
 % hyper-parameter grid
 LR_VALUES = [1e-2, 1e-3, 5e-4];             

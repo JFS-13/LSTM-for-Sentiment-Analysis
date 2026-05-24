@@ -53,14 +53,12 @@ for i = 1:BATCH_SIZE:num_test
     [prob, ~] = forward_lstm(x_batch, lstm_net, 0);
     pred = round(prob);
     
-    for k = 1:length(y_batch)
-        if pred(k) == y_batch(k)
-            correct = correct + 1;
-            if y_batch(k) == 1, TP = TP + 1; else, TN = TN + 1; end
-        else
-            if y_batch(k) == 1, FN = FN + 1; else, FP = FP + 1; end
-        end
-    end
+    % vectorized metrics calculation
+    correct = correct + sum(pred == y_batch);
+    TP = TP + sum((pred == 1) & (y_batch == 1));
+    TN = TN + sum((pred == 0) & (y_batch == 0));
+    FP = FP + sum((pred == 1) & (y_batch == 0));
+    FN = FN + sum((pred == 0) & (y_batch == 1));
 end
 
 % --- 4. METRICS CALCULATION ---
