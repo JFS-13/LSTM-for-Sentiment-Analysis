@@ -19,11 +19,14 @@ Il workflow è suddiviso in fasi logiche:
 
 ## Struttura della Repository
 *   `load_twitterdata.m`: Script per caricare e processare il dataset.
+*   `analyze_seq_length.m`: Analisi statistica della lunghezza dei tweet per ottimizzare il padding.
 *   `init_lstm.m`: Inizializzazione dei parametri della rete.
 *   `forward_lstm.m` / `backward_lstm.m`: Logica core della rete LSTM.
 *   `train_lstm_*.m`: Script specifici per ogni metodo di ottimizzazione.
+*   `train_fold_generic.m`: Motore di addestramento generico utilizzato per la validazione incrociata.
 *   `kfold_gridsearch.m`: Script per la selezione dei migliori iperparametri per ogni algoritmo di ottimizzazione.
-*   `confronto_finale.m`: Visualizzazione e confronto tra i risultati ottenuti con i diversi ottimizzatori.
+*   `confronto_finale.m`: Script per la generazione di grafici comparativi (Loss e Accuracy) tra i diversi ottimizzatori.
+*   `test_lstm.m`: Valutazione quantitativa del modello (Matrice di Confusione, Precision, Recall, F1-Score) sul test set.
 *   `test_custom_tweets.m`: Script per testare il modello su frasi arbitrarie.
 
 ## Requisiti
@@ -33,22 +36,19 @@ Il workflow è suddiviso in fasi logiche:
 ## Guida all'Uso
 
 ### 1. Preparazione Dati
-Eseguire `load_twitterdata.m` per generare il file `ready_data.mat`. Assicurarsi che la cartella `TwitterParsed` o il relativo `.zip` siano presenti.
+1.  (Opzionale) Eseguire `analyze_seq_length.m` per visualizzare la distribuzione delle lunghezze dei tweet.
+2.  Eseguire `load_twitterdata.m` per generare il file `ready_data.mat`. Assicurarsi che la cartella `TwitterParsed` o il relativo `.zip` siano presenti.
 
 ### 2. Inizializzazione
 Eseguire `init_lstm.m` per generare i pesi iniziali `init_lstm.mat`.
 
 ### 3. Ricerca Iperparametri
-Per trovare la combinazione migliore di Learning Rate e Lambda:
-```matlab
-kfold_gridsearch
-```
-Lo script utilizzerà i core della CPU per testare diverse combinazioni tramite Cross-Validation a 3 fold.
+Per trovare la combinazione migliore di Learning Rate e Lambda si deve eseguire òo script `kfold_gridsearch.m` chr utilizzerà i core della CPU per testare diverse combinazioni tramite Cross-Validation a 3 fold, delegando l'addestramento dei singoli fold alla funzione `train_fold_generic.m`.
 
 ### 4. Training Finale
-Aggiornare i parametri negli script `train_lstm_*.m` con i valori ottimali trovati e avviare l'addestramento (10 epoche impostate).
+Aggiornare i parametri negli script `train_lstm_*.m` con i valori ottimali trovati (o usare quelli predefiniti) e avviare l'addestramento.
 
 ### 5. Valutazione e Test
-*   Eseguire `confronto_finale.m` per generare i grafici di Loss e Accuracy.
-*   Utilizzare `test_lstm.m` per valutare le performance (Accuracy, F1-Score, Matrice di Confusione) del modello scelto sul test set.
-*   Utilizzare `test_custom_tweets.m` per una verifica su input manuali.
+*   **Confronto Modelli**: Eseguire `confronto_finale.m` per visualizzare l'andamento della Loss e dell'Accuracy di validazione di tutti gli ottimizzatori addestrati.
+*   **Performance Dettagliate**: Eseguire `test_lstm.m` per analizzare il modello scelto sul Test Set. Lo script produrrà la Matrice di Confusione e calcolerà Precision, Recall e F1-Score.
+*   **Test Interattivo**: Utilizzare `test_custom_tweets.m` per inserire frasi a piacere e verificare la classificazione del sentiment in tempo reale.
