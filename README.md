@@ -2,6 +2,8 @@
 
 Questo progetto implementa una rete neurale ricorrente di tipo **Long Short-Term Memory (LSTM)** in ambiente **MATLAB** per l'analisi del sentiment di file testuali contenenti dei possibili commenti presi da Twitter. L'obiettivo principale è la **costruzione da zero dell'architettura LSTM**, senza l'ausilio di toolbox di machine learning o deep learning predefiniti.
 
+📄 **[Per leggere la relazione del progetto](./Relazione_Metodi_di_ottimizzazione_Big_Data.pdf)**
+
 ## Scopo del Progetto
 Il progetto si focalizza sulla classificazione binaria del sentiment (positivo/negativo) utilizzando un dataset di tweet pre-elaborati. Di particolare importanza vi è l'implementazione manuale dei passaggi di `forward` e `backward` propagation e della gestione degli stati della cella LSTM. Conseguentemente ad essi, vengono esplorati e confrontati diversi algoritmi di ottimizzazione per l'addestramento della rete sul dataset reale (Twitter), validando l'efficacia della struttura implementata.
 
