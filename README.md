@@ -43,7 +43,7 @@ Il workflow è suddiviso in fasi logiche:
 Eseguire `init_lstm.m` per generare i pesi iniziali `init_lstm.mat`.
 
 ### 3. Ricerca Iperparametri
-Per trovare la combinazione migliore di Learning Rate e Lambda si deve eseguire òo script `kfold_gridsearch.m` chr utilizzerà i core della CPU per testare diverse combinazioni tramite Cross-Validation a 3 fold, delegando l'addestramento dei singoli fold alla funzione `train_fold_generic.m`.
+Per trovare la combinazione migliore di Learning Rate e Lambda si deve eseguire lo script `kfold_gridsearch.m` che utilizzerà i core della CPU per testare diverse combinazioni tramite Cross-Validation a 3 fold, delegando l'addestramento dei singoli fold alla funzione `train_fold_generic.m`.
 
 ### 4. Training Finale
 Aggiornare i parametri negli script `train_lstm_*.m` con i valori ottimali trovati (o usare quelli predefiniti) e avviare l'addestramento.
