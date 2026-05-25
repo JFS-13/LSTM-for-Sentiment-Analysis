@@ -8,13 +8,13 @@ Questo progetto implementa una rete neurale ricorrente di tipo **Long Short-Term
 Il progetto si focalizza sulla classificazione binaria del sentiment (positivo/negativo) utilizzando un dataset di tweet pre-elaborati. Di particolare importanza vi è l'implementazione manuale di `forward` e `backward` pass e della gestione degli stati della cella LSTM. Conseguentemente ad essi, vengono esplorati e confrontati diversi algoritmi di ottimizzazione per l'addestramento della rete sul dataset reale (Twitter), validando l'efficacia della struttura implementata.
 
 ## Architettura del Sistema
-Il workflow è suddiviso in fasi logiche:
+Il workflow è suddiviso nelle seguenti fasi:
 
 1.  **Preprocessing**: Pulizia dei tweet, tokenizzazione e creazione di un vocabolario di 10000 parole.
 2.  **Inizializzazione**: Utilizzo di pesi **Xavier** standardizzati per garantire che tutti i modelli partano dalla stessa base, permettendo un confronto equo.
 3.  **Architettura LSTM**: Implementazione manuale, senza toolbox di machine learning, di `forward` e `backward` pass.
 4.  **K-Fold Cross Validation**: Implementazione di un meccanismo di Cross Validation per individuare i migliori iperparametri di training.
-5.  **Algoritmi di ottimizzazione**: Implementazione di quattro varianti principali per testare la robustezza dell'architettura costruita:
+5.  **Training con Algoritmi di ottimizzazione**: Implementazione di quattro varianti principali per testare la robustezza dell'architettura costruita:
     *   **SGD Nesterov**: Con learning rate dinamico.
     *   **Adagrad**: Scaling adattivo per gestire la sparsità dei dati.
     *   **RMSprop**: Media mobile per stabilizzare l'apprendimento.
@@ -49,7 +49,7 @@ Eseguire `init_lstm.m` per inizializzare la rete la matrice di pesi iniziali sta
 ### 3. Ricerca Iperparametri
 Per trovare la combinazione migliore di Learning Rate e Lambda si deve eseguire lo script `kfold_gridsearch.m`. Di default il parametro `OPTIMIZER` è impostato su `'sgd'`; per testare gli altri algoritmi, è sufficiente modificare la stringa in cima allo script selezionando una delle opzioni supportate: `'sgd'`, `'adagrad'`, `'rmsprop'`, o `'adamw'`. Lo script testerà diverse combinazioni tramite Cross-Validation a 3 fold, delegando l'addestramento dei singoli fold alla funzione `train_fold_generic.m`.
 
-### 4. Training Finale
+### 4. Training
 Aggiornare i parametri negli script `train_lstm_*.m` con i valori ottimali trovati (o usare quelli predefiniti) e avviare l'addestramento. Al termine di ogni epoca lo script valuterà la rete sul validation set, salvando su disco il checkpoint con il modello migliore.
 
 ### 5. Valutazione e Test
